@@ -256,7 +256,7 @@ ${openFavorites ? "translate-x-0" : "-translate-x-full"}`}>
     <h2 className="text-xl font-bold">Favorites</h2>
 
     <img id="closeFavorites"
-    src="images/XOut.png"
+    src="/images/XOut.png"
     className="w-8 cursor-pointer" 
     onClick={() => setOpenFavorites(false)}
     />
