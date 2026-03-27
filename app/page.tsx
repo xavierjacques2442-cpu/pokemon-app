@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect} from "react";
-
+import Image from "next/image";
 type Pokemon = {
   id: number;
   name: string;
@@ -122,14 +122,14 @@ className="flex bg-white/80 rounded-2x1 shadow-x1 overflow-hidden w-full max-w-[
   className="border-r px-3 md:px-5 flex items-center cursor-pointer"
    onClick={() => setOpenFavorites(true)}
    >
-    <img src="/images/FavoriteList.png" className="w-6 md:w-8"/>
+    <Image alt="favorite" width={100} height={100} src="/images/FavoriteList.png" className="w-6 md:w-8"/>
   </div>
 
   <div id="randomBtn"
   className="border-r px-3 md:px-5 flex items-center cursor-pointer"
   onClick={ ()=> fetchPokemon(Math.floor(Math.random() * 649) + 1)}
   >
-<img src="/images/Random.png" className="w-6 md:w-8" />
+<Image alt="random" width={100} height={100} src="/images/Random.png" className="w-6 md:w-8" />
   </div>
 
 <div className="flex-1 px-3 md:px-5 ">
@@ -148,14 +148,14 @@ onKeyDown={e => e.key === "Enter" && fetchPokemon(input)}
   className="border-1 px-3 md:px-5 flex items-center cursor-pointer" 
   onClick={() => fetchPokemon(input)}
   >
-    <img src="/images/Search.png" className="w-6 md:w-8"/>
+    <Image alt="search" width={100} height={100} src="/images/Search.png" className="w-6 md:w-8"/>
 </div>
 </section>
 
  {pokemon && (
           <section className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl w-full max-w-[1100px] p-4 md:p-8 space-y-5 overflow-y-auto">
             <div className="flex flex-wrap items-center justify-center gap-3 md:gap-5">
-             <img
+             <Image alt="stars" width={100} height={100}
   src={
     pokemon && showfavorites.includes(pokemon.name)
       ? "/images/Blackstar.png"
@@ -255,7 +255,7 @@ ${openFavorites ? "translate-x-0" : "-translate-x-full"}`}>
   <div className="flex justify-between items-center mb-4">
     <h2 className="text-xl font-bold">Favorites</h2>
 
-    <img id="closeFavorites"
+    <Image alt="Xout" width={100} height={100} id="closeFavorites"
     src="/images/XOut.png"
     className="w-8 cursor-pointer" 
     onClick={() => setOpenFavorites(false)}
@@ -272,7 +272,7 @@ ${openFavorites ? "translate-x-0" : "-translate-x-full"}`}>
       >
         <span className="capitalize">{f}</span>
 
-        <img
+        <Image alt="stars" width={100} height={100}
     src={
     pokemon && showfavorites.includes(f)
       ? "/images/Blackstar.png"
