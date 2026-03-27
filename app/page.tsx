@@ -118,7 +118,7 @@ setEvolutionSprites(evoSprites);
 
   return(
     <div className="min-h-screen bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: "url('/images/Background.png')"}}
+    style={{ backgroundImage: `url(${Background.src})`}}
     >
 <div className="min-h-screen flex flex-col items-center p-3 md:p-6 space-y-4 md:space-y-6">
 
