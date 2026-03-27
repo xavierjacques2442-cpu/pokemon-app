@@ -276,7 +276,7 @@ ${openFavorites ? "translate-x-0" : "-translate-x-full"}`}>
     src={
     pokemon && showfavorites.includes(f)
       ? "/images/Blackstar.png"
-      : "/images/star.png"
+      : "/images/Star.png"
   }
   className="w-8 md:w-12 cursor-pointer"
   onClick={(e) => {
