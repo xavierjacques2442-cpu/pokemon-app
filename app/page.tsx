@@ -2,6 +2,14 @@
 
 import React, { useState, useEffect} from "react";
 import Image from "next/image";
+import XOut from "@/public/Images/XOut.png";
+import Blackstar from "@/public/Images/Blackstar.png";
+import Star from "@/public/Images/Star.png";
+import Search from "@/public/Images/Search.png";
+import Random from "@/public/Images/Random.png";
+import FavoriteList from "@/public/Images/FavoriteList.png";
+import FavoritePressed from "@/public/Images/FavoirtePressed.png"
+import Background from "@/public/Images/Background.png";
 type Pokemon = {
   id: number;
   name: string;
@@ -122,14 +130,14 @@ className="flex bg-white/80 rounded-2x1 shadow-x1 overflow-hidden w-full max-w-[
   className="border-r px-3 md:px-5 flex items-center cursor-pointer"
    onClick={() => setOpenFavorites(true)}
    >
-    <Image alt="favorite" width={100} height={100} src="/images/FavoriteList.png" className="w-6 md:w-8"/>
+    <Image alt="favorite" width={100} height={100} src={FavoriteList} className="w-6 md:w-8"/>
   </div>
 
   <div id="randomBtn"
   className="border-r px-3 md:px-5 flex items-center cursor-pointer"
   onClick={ ()=> fetchPokemon(Math.floor(Math.random() * 649) + 1)}
   >
-<Image alt="random" width={100} height={100} src="/images/Random.png" className="w-6 md:w-8" />
+<Image alt="random" width={100} height={100} src={Random} className="w-6 md:w-8" />
   </div>
 
 <div className="flex-1 px-3 md:px-5 ">
@@ -148,7 +156,7 @@ onKeyDown={e => e.key === "Enter" && fetchPokemon(input)}
   className="border-1 px-3 md:px-5 flex items-center cursor-pointer" 
   onClick={() => fetchPokemon(input)}
   >
-    <Image alt="search" width={100} height={100} src="/images/Search.png" className="w-6 md:w-8"/>
+    <Image alt="search" width={100} height={100} src={Search} className="w-6 md:w-8"/>
 </div>
 </section>
 
@@ -158,8 +166,8 @@ onKeyDown={e => e.key === "Enter" && fetchPokemon(input)}
              <Image alt="stars" width={100} height={100}
   src={
     pokemon && showfavorites.includes(pokemon.name)
-      ? "/images/Blackstar.png"
-      : "/images/star.png"
+      ? Blackstar
+      : Star
   }
   className="w-8 md:w-12 cursor-pointer"
   onClick={toggleFavorite}
@@ -255,8 +263,8 @@ ${openFavorites ? "translate-x-0" : "-translate-x-full"}`}>
   <div className="flex justify-between items-center mb-4">
     <h2 className="text-xl font-bold">Favorites</h2>
 
-    <Image alt="Xout" width={100} height={100} id="closeFavorites"
-    src="/images/XOut.png"
+    <Image alt="XOut" width={100} height={100} id="closeFavorites"
+    src={XOut}
     className="w-8 cursor-pointer" 
     onClick={() => setOpenFavorites(false)}
     />
@@ -275,8 +283,8 @@ ${openFavorites ? "translate-x-0" : "-translate-x-full"}`}>
         <Image alt="stars" width={100} height={100}
     src={
     pokemon && showfavorites.includes(f)
-      ? "/images/Blackstar.png"
-      : "/images/Star.png"
+      ? Blackstar
+      : Star
   }
   className="w-8 md:w-12 cursor-pointer"
   onClick={(e) => {
